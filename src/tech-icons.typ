@@ -3,6 +3,7 @@
 #let available-icons = icon-data.keys().sorted()
 
 #let icon-aliases = (
+<<<<<<< HEAD
   // Cloud platforms
   "gcp": "googlecloud",
   "google-cloud": "googlecloud",
@@ -11,6 +12,11 @@
   "tailwind": "tailwindcss",
 
   // JavaScript frameworks
+=======
+  "gcp": "googlecloud",
+  "google-cloud": "googlecloud",
+  "tailwind": "tailwindcss",
+>>>>>>> 6e0f9580cf018bd213078ff40797abb7e2f28a9c
   "next": "nextjs",
   "node": "nodejs",
   "d3": "d3js",
@@ -19,6 +25,7 @@
   "backbone": "backbonejs",
   "three": "threejs",
   "p5": "p5js",
+<<<<<<< HEAD
 
   // React ecosystem
   "react-bootstrap": "reactbootstrap",
@@ -41,12 +48,30 @@
   "uml": "unifiedmodellinglanguage",
 
   // Language shortcuts
+=======
+  "react-bootstrap": "reactbootstrap",
+  "material-ui": "materialui",
+  "ms-sql": "microsoftsqlserver",
+  "mssql": "microsoftsqlserver",
+  "sqlserver": "microsoftsqlserver",
+  "postgres": "postgressql",
+  "postgresql": "postgressql",
+  "poetry": "pythonpoetry",
+  "terraform": "hashicorpterraform",
+  "vagrant": "hashicorpvagrant",
+  "vault": "hashicorpvault",
+  "k8s": "kubernetes",
+  "uml": "unifiedmodellinglanguage",
+>>>>>>> 6e0f9580cf018bd213078ff40797abb7e2f28a9c
   "ts": "typescript",
   "js": "javascript",
   "py": "python",
 )
 
+<<<<<<< HEAD
 // Resolve icon name (handles aliases)
+=======
+>>>>>>> 6e0f9580cf018bd213078ff40797abb7e2f28a9c
 #let resolve-icon-name(name) = {
   if name in icon-aliases {
     icon-aliases.at(name)
@@ -55,6 +80,7 @@
   }
 }
 
+<<<<<<< HEAD
 // Render a tech stack icon as inline SVG
 //
 // All icons use standardized viewBox="0 0 128 128" for consistent sizing.
@@ -70,6 +96,8 @@
 //   #tech-icon("typescript", size: 1em)
 //   #tech-icon("gcp")  // Uses alias → googlecloud
 //
+=======
+>>>>>>> 6e0f9580cf018bd213078ff40797abb7e2f28a9c
 #let tech-icon(name, size: 0.66em, baseline: 20%) = {
   let resolved-name = resolve-icon-name(name)
 
@@ -82,7 +110,10 @@
 
   let svg-string = "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\">" + svg-body + "</svg>"
 
+<<<<<<< HEAD
   // Render as inline image
+=======
+>>>>>>> 6e0f9580cf018bd213078ff40797abb7e2f28a9c
   box(
     height: size,
     baseline: baseline,
@@ -91,6 +122,7 @@
   ]
 }
 
+<<<<<<< HEAD
 // Render multiple tech icons horizontally
 //
 // Parameters:
@@ -102,6 +134,8 @@
 //   #tech-icons(("python", "typescript", "react"))
 //   #tech-icons(("gcp", "docker", "k8s"), size: 0.8em)
 //
+=======
+>>>>>>> 6e0f9580cf018bd213078ff40797abb7e2f28a9c
 #let tech-icons(icons, size: 0.66em, spacing: 2pt) = {
   box({
     for (i, icon-name) in icons.enumerate() {
