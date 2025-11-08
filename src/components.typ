@@ -67,9 +67,9 @@
 }
 
 #let employer-info(
-  logo: none,
   name: "",
   duration: "",
+  content,
 ) = {
   block({
     set align(horizon)
@@ -77,16 +77,18 @@
       dir: ltr,
       spacing: 0.5em,
       {
-        if logo != none {
-          let logo-path = if logo.starts-with("/") { logo } else { "../" + logo }
           box(
             width: 2.5em,
-            align(left + horizon)[
-              #image(logo-path, width: 100%)
-            ]
+            align(
+              left + horizon,
+              if content == none {
+                square(width: 2.5em, fill: colors.lightgray.lighten(80%), radius: 0.5em)
+              } else {
+                content
+              }
+            )
           )
           h(0.5em)
-        }
       },
       stack(
         dir: ttb,

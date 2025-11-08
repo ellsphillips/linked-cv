@@ -19,7 +19,7 @@
 #components.section("Experience")
 
 #components.employer-info(
-  logo: "example/img/openai.svg",
+  image("/example/img/openai.svg"),
   name: "OpenAI",
   duration: ("02-2024", "current"),
 )
@@ -72,9 +72,9 @@
 
 
 #components.employer-info(
-  logo: "example/img/palantir.svg",
   name: "Palantir",
   duration: ("09-2023", "02-2024"),
+  image("/example/img/palantir.svg"),
 )
 
 #frame.connected-frames(
@@ -96,9 +96,9 @@
 
 
 #components.employer-info(
-  logo: "example/img/github.svg",
   name: "GitHub",
   duration: ("08-2022", "09-2023"),
+  image("/example/img/github.svg"),
 )
 
 #frame.connected-frames(
