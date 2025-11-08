@@ -1,0 +1,41 @@
+name: Test Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install just
+        uses: extractions/setup-just@v2
+        with:
+          just-version: '1.30.0'
+
+      - name: Install Typst
+        uses: typst-community/setup-typst@v4
+        with:
+          typst-version: 'latest'
+
+      - name: Create build directory
+        run: just init
+
+      - name: Build CV
+        run: just build
+
+      - name: Verify PDF was created
+        run: |
+          if [ ! -f "build/your-name-cv.pdf" ]; then
+            echo "Error: PDF was not created"
+            exit 1
+          fi
+          echo "✓ PDF successfully created"
+          ls -lh build/your-name-cv.pdf
