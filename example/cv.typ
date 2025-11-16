@@ -1,19 +1,21 @@
 #import "../lib.typ": *
 
-#show: linkedin-cv.with(
+#show: linked-cv.with(
   firstname: "Your",
   lastname: "Name",
-  email: "hello@example.com",
-  mobile: "01234 567890",
-  github: "your-github-username",
-  linkedin: "your-linkedin-username",
+  socials: (
+    email: "hello@example.com",
+    mobile: "01234 567890",
+    github: "your-github-username",
+    linkedin: "your-linkedin-username",
+  ),
 )
 
 #set text(size: 8pt, hyphenate: false)
 #set par(justify: true, leading: 0.52em)
 
 #typography.summary[
-  #lorem(30)
+  #lorem(36)
 ]
 
 #components.section("Experience")

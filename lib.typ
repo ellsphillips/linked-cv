@@ -5,14 +5,15 @@
 #import "src/layout.typ": layout
 #import "src/frame.typ"
 
-#let linkedin-cv(
+#let linked-cv(
   firstname: "First",
   lastname: "Last",
-  email: none,
-  mobile: none,
-  github: none,
-  linkedin: none,
-  position: none,
+  socials: (
+    email: none,
+    mobile: none,
+    github: none,
+    linkedin: none,
+  ),
 
   body,
 ) = {
@@ -21,11 +22,7 @@
   components.header(
     firstname,
     lastname,
-    email: email,
-    mobile: mobile,
-    github: github,
-    linkedin: linkedin,
-    position: position,
+    socials: socials,
   )
 
   body

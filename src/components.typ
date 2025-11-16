@@ -7,21 +7,19 @@
 #let header(
   firstname,
   lastname,
-  email: none,
-  mobile: none,
-  github: none,
-  linkedin: none,
-  position: none,
+  socials: (
+    email: none,
+    mobile: none,
+    github: none,
+    linkedin: none,
+  ),
 ) = {
   set align(center)
 
+  let (email, mobile, github, linkedin) = socials
+
   typography.name(firstname + " " + lastname)
 
-  if position != none {
-    typography.position(position)
-    linebreak()
-    v(0.4mm)
-  }
 
   v(-2.5em)
 

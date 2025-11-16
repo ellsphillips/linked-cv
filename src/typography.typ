@@ -7,12 +7,6 @@
   content
 )
 
-#let position(content) = text(
-  size: 7.6pt,
-  fill: colors.awesome,
-  smallcaps(content)
-)
-
 #let social-entry(content) = text(
   size: 6.8pt,
   fill: colors.text,
