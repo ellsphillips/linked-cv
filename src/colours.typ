@@ -13,15 +13,13 @@
   lightbackground: rgb("#EEEEEE"),
   darkbackground: rgb("#CCCCCC"),
 
-  awesome: rgb("#6694A5"),
-  awesome-subsection: rgb("#6694A5").darken(30%),
-
-  monokai-pink: rgb("#ff6188"),
-  monokai-orange: rgb("#fc9867"),
-  monokai-yellow: rgb("#ffd866"),
-  monokai-green: rgb("#a9dc76"),
-  monokai-blue: rgb("#78dce8"),
-  monokai-purple: rgb("#ab9df2"),
+  accent: rgb("#6694A5"),
 )
 
-#let get-color(name) = colours.at(name)
+#let get-colour(name) = colours.at(name)
+
+#let accent-colour-state = state("accent-colour", colours.accent)
+#let get-accent-colour() = accent-colour-state.get()
+#let set-accent-colour(colour) = {
+  accent-colour-state.update(s => colour)
+}

@@ -1,4 +1,4 @@
-#import "colours.typ": colours
+#import "colours.typ": colours, get-accent-colour
 #import "timeline-state.typ": *
 #import "typography.typ"
 #import "utils.typ": parse-date
@@ -157,7 +157,6 @@
 #let frame-group(
   num-frames: 1,
   group-id: none,
-  accent-color: colours.awesome,
   content,
 ) = {
   if group-id != none {
@@ -173,7 +172,6 @@
 
 #let connected-frames(
   group-id,
-  accent-color: colours.awesome,
   ..frames
 ) = {
   let frame-list = frames.pos()
@@ -181,7 +179,6 @@
   frame-group(
     num-frames: frame-list.len(),
     group-id: group-id,
-    accent-color: accent-color,
   )[
     #for (idx, frame-data) in frame-list.enumerate() {
       if type(frame-data) == dictionary {
@@ -199,15 +196,4 @@
       }
     }
   ]
-}
-
-#let simple-hint(body, color: colours.awesome) = {
-  block(
-    width: 100%,
-    breakable: true,
-    stroke: (left: 1pt + color),
-    inset: 12pt,
-    radius: (right: 2pt),
-    text(size: 10pt, body)
-  )
 }

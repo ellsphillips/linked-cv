@@ -1,4 +1,4 @@
-#import "src/colours.typ": colours
+#import "src/colours.typ": colours, set-accent-colour
 #import "src/typography.typ"
 #import "src/utils.typ": *
 #import "src/components.typ"
@@ -14,9 +14,12 @@
     github: none,
     linkedin: none,
   ),
+  accent-colour: colours.accent,
 
   body,
 ) = {
+  set-accent-colour(accent-colour)
+
   show: doc => layout(firstname, lastname, doc)
 
   components.header(

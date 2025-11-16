@@ -1,4 +1,4 @@
-#import "colours.typ": colours
+#import "colours.typ": colours, get-accent-colour
 
 #let name(content) = text(
   size: 32pt,
@@ -13,11 +13,16 @@
   content
 )
 
-#let summary(content) = text(
-  size: 8.8pt,
-  fill: colours.awesome,
-  content
-)
+#let summary(content) = {
+  context {
+    let accent = get-accent-colour()
+    text(
+      size: 8.8pt,
+      fill: accent,
+      content
+    )
+  }
+}
 
 #let footer(content) = text(
   size: 8pt,

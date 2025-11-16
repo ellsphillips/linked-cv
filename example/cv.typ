@@ -1,4 +1,5 @@
 #import "../lib.typ": *
+#import "../src/colours.typ": get-accent-colour
 
 #show: linked-cv.with(
   firstname: "Your",
@@ -9,6 +10,7 @@
     github: "your-github-username",
     linkedin: "your-linkedin-username",
   ),
+  accent-colour: colours.accent,
 )
 
 #set text(size: 8pt, hyphenate: false)
@@ -140,22 +142,25 @@
 
 #components.section("Qualifications")
 
-#align(center)[
-  #table(
-    columns: (30%, 15%, 15%, 40%),
-    align: (left, left, left, right),
-    stroke: none,
+#context {
+  let accent = get-accent-colour()
+  align(center)[
+    #table(
+      columns: (30%, 15%, 15%, 40%),
+      align: (left, left, left, right),
+      stroke: none,
 
-    ..(("Qualification", "Grade", "Date", "Institution").map(typography.table-header)),
+      ..(("Qualification", "Grade", "Date", "Institution").map(typography.table-header)),
 
-    table.hline(stroke: 0.5pt + colours.gray.lighten(60%)),
+      table.hline(stroke: 0.5pt + colours.gray.lighten(60%)),
 
-    ..(for item in (
-      ("Mathematics", "1st", "—", "University of Exeter"),
-      ("Machine Learning", "—", "09-2023", "Microsoft Azure"),
-      ("Artificial Intelligence", "1st", "02-2025", "OpenAI"),
-    ) {
-      components.qualification(..item)
-    })
-  )
-]
+      ..(for item in (
+        ("Mathematics", "1st", "—", "University of Exeter"),
+        ("Machine Learning", "—", "09-2023", "Microsoft Azure"),
+        ("Artificial Intelligence", "1st", "02-2025", "OpenAI"),
+      ) {
+        components.qualification(..item, accent-color: accent)
+      })
+    )
+  ]
+}

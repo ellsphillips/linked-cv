@@ -1,4 +1,4 @@
-#import "colours.typ": colours
+#import "colours.typ": colours, get-accent-colour
 #import "typography.typ"
 #import "utils.typ": *
 #import "tech-icons.typ": tech-icon, tech-icons
@@ -44,24 +44,27 @@
 }
 
 #let section(title) = {
-  v(0.5em)
+  context {
+    v(0.5em)
 
-  let title-str = if type(title) == str { title } else { str(title) }
-  let first-three = title-str.slice(0, calc.min(3, title-str.len()))
-  let rest = if title-str.len() > 3 { title-str.slice(3) } else { "" }
+    let title-str = if type(title) == str { title } else { str(title) }
+    let first-three = title-str.slice(0, calc.min(3, title-str.len()))
+    let rest = if title-str.len() > 3 { title-str.slice(3) } else { "" }
+    let accent = get-accent-colour()
 
-  let colored-title = [
-    #text(fill: colours.awesome)[#first-three]#text(fill: black)[#rest]
-  ]
+    let colored-title = [
+      #text(fill: accent)[#first-three]#text(fill: black)[#rest]
+    ]
 
-  grid(
-    columns: (auto, 1fr),
-    column-gutter: 0.5em,
-    align: (left, bottom),
-    typography.section(colored-title),
-    place(dy: 1.25em, line(length: 100%, stroke: 0.9pt + colours.gray)),
-  )
-  v(0em)
+    grid(
+      columns: (auto, 1fr),
+      column-gutter: 0.5em,
+      align: (left, bottom),
+      typography.section(colored-title),
+      place(dy: 1.25em, line(length: 100%, stroke: 0.9pt + colours.gray)),
+    )
+    v(0em)
+  }
 }
 
 #let employer-info(
@@ -249,11 +252,16 @@
   )
 }
 
-#let qualification(name, grade, date, institution) = {
+#let qualification(name, grade, date, institution, accent-color: none) = {
+  let accent = if accent-color != none {
+    accent-color
+  } else {
+    context get-accent-colour()
+  }
   (
     text(size: 8pt, fill: colours.graytext, name),
     text(size: 8pt, style: "italic", fill: colours.graytext, grade),
     text(size: 8pt, style: "italic", fill: colours.graytext, date),
-    text(size: 9pt, fill: colours.awesome, institution),
+    text(size: 9pt, fill: accent, institution),
   )
 }
