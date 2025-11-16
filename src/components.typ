@@ -1,4 +1,4 @@
-#import "colors.typ": colors
+#import "colours.typ": colours
 #import "typography.typ"
 #import "utils.typ": *
 #import "tech-icons.typ": tech-icon, tech-icons
@@ -51,7 +51,7 @@
   let rest = if title-str.len() > 3 { title-str.slice(3) } else { "" }
 
   let colored-title = [
-    #text(fill: colors.awesome)[#first-three]#text(fill: black)[#rest]
+    #text(fill: colours.awesome)[#first-three]#text(fill: black)[#rest]
   ]
 
   grid(
@@ -59,7 +59,7 @@
     column-gutter: 0.5em,
     align: (left, bottom),
     typography.section(colored-title),
-    place(dy: 1.25em, line(length: 100%, stroke: 0.9pt + colors.gray)),
+    place(dy: 1.25em, line(length: 100%, stroke: 0.9pt + colours.gray)),
   )
   v(0em)
 }
@@ -80,7 +80,7 @@
             align(
               left + horizon,
               if content == none {
-                square(width: 2.5em, fill: colors.lightgray.lighten(80%), radius: 0.5em)
+                square(width: 2.5em, fill: colours.lightgray.lighten(80%), radius: 0.5em)
               } else {
                 content
               }
@@ -188,7 +188,7 @@
         circle(
           radius: dot-radius,
           stroke: 1.5pt + white,
-          fill: colors.lightgray
+          fill: colours.lightgray
         )
       )
 
@@ -217,7 +217,7 @@
                 line(
                   start: (0pt, 0pt),
                   end: (0pt, line-height),
-                  stroke: timeline-width + colors.lightgray.lighten(40%)
+                  stroke: timeline-width + colours.lightgray.lighten(40%)
                 )
               )
             }
@@ -251,9 +251,9 @@
 
 #let qualification(name, grade, date, institution) = {
   (
-    text(size: 8pt, fill: colors.graytext, name),
-    text(size: 8pt, style: "italic", fill: colors.graytext, grade),
-    text(size: 8pt, style: "italic", fill: colors.graytext, date),
-    text(size: 9pt, fill: colors.awesome, institution),
+    text(size: 8pt, fill: colours.graytext, name),
+    text(size: 8pt, style: "italic", fill: colours.graytext, grade),
+    text(size: 8pt, style: "italic", fill: colours.graytext, date),
+    text(size: 9pt, fill: colours.awesome, institution),
   )
 }

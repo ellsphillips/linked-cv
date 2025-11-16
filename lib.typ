@@ -1,4 +1,4 @@
-#import "src/colors.typ": colors
+#import "src/colours.typ": colours
 #import "src/typography.typ"
 #import "src/utils.typ": *
 #import "src/components.typ"

@@ -1,4 +1,4 @@
-#let colors = (
+#let colours = (
   white: rgb("#FFFFFF"),
   black: rgb("#000000"),
   darkgray: rgb("#333333"),
@@ -24,4 +24,4 @@
   monokai-purple: rgb("#ab9df2"),
 )
 
-#let get-color(name) = colors.at(name)
+#let get-color(name) = colours.at(name)

@@ -1,5 +1,6 @@
-#import "colors.typ": colors
+#import "colours.typ": colours
 #import "timeline-state.typ": *
+#import "typography.typ"
 #import "utils.typ": parse-date
 
 #let TOP-PADDING = -10pt
@@ -30,7 +31,7 @@
   let dot-radius = 2.5pt
   let dot-offset = 3.66mm
   let border-width = .5pt
-  let border-color = colors.lightgray
+  let border-color = colours.lightgray
 
   if group-id != none {
     timeline-state.update(s => {
@@ -69,7 +70,12 @@
 
         if title != none {
           let title-content = if duration != none {
-            [#title #h(1fr) #text(fill: colors.gray, size: 9pt)[#format-duration(duration.at(0), duration.at(1))]]
+            stack(
+              dir: ltr,
+              typography.workstream(title),
+              h(1fr),
+              align(right + horizon, typography.duration(format-duration(duration.at(0), duration.at(1))))
+            )
           } else {
             title
           }
@@ -85,7 +91,7 @@
 
         text(
           size: 10pt,
-          fill: colors.darktext,
+          fill: colours.darktext,
           body
         )
 
@@ -111,7 +117,7 @@
             circle(
               radius: dot-radius,
               stroke: 2.5pt + white,
-              fill: colors.lightgray
+              fill: colours.lightgray
             )
           )
 
@@ -151,7 +157,7 @@
 #let frame-group(
   num-frames: 1,
   group-id: none,
-  accent-color: colors.awesome,
+  accent-color: colours.awesome,
   content,
 ) = {
   if group-id != none {
@@ -167,7 +173,7 @@
 
 #let connected-frames(
   group-id,
-  accent-color: colors.awesome,
+  accent-color: colours.awesome,
   ..frames
 ) = {
   let frame-list = frames.pos()
@@ -195,7 +201,7 @@
   ]
 }
 
-#let simple-hint(body, color: colors.awesome) = {
+#let simple-hint(body, color: colours.awesome) = {
   block(
     width: 100%,
     breakable: true,

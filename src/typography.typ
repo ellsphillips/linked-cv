@@ -1,86 +1,86 @@
-#import "colors.typ": colors
+#import "colours.typ": colours
 
 #let name(content) = text(
   size: 32pt,
   weight: "bold",
-  fill: colors.black,
+  fill: colours.black,
   content
 )
 
 #let social-entry(content) = text(
   size: 6.8pt,
-  fill: colors.text,
+  fill: colours.text,
   content
 )
 
 #let summary(content) = text(
   size: 8.8pt,
-  fill: colors.awesome,
+  fill: colours.awesome,
   content
 )
 
 #let footer(content) = text(
   size: 8pt,
-  fill: colors.lighttext,
+  fill: colours.lighttext,
   smallcaps(content)
 )
 
 #let section(content) = text(
   size: 16pt,
   weight: "bold",
-  fill: colors.text,
+  fill: colours.text,
   content
 )
 
 #let subsection(content) = text(
   size: 12pt,
-  fill: colors.text,
+  fill: colours.text,
   smallcaps(content)
 )
 
 #let org(content) = text(
   size: 10pt,
   weight: "bold",
-  fill: colors.darktext,
+  fill: colours.darktext,
   content
 )
 
 #let duration(content) = text(
   size: 8pt,
   style: "italic",
-  fill: colors.graytext,
+  fill: colours.graytext,
   content
 )
 
 #let project(content) = text(
   size: 10pt,
   weight: "bold",
-  fill: colors.darktext,
+  fill: colours.darktext,
   content
 )
 
 #let date(content) = text(
   size: 8pt,
   style: "italic",
-  fill: colors.graytext,
+  fill: colours.graytext,
   content
 )
 
 #let description(content) = text(
   size: 9pt,
-  fill: colors.text,
+  fill: colours.text,
   content
 )
 
 #let table-header(content) = text(
   size: 9pt,
   weight: "bold",
-  fill: colors.text,
+  fill: colours.text,
   content
 )
 
 #let workstream(content) = text(
   weight: "bold",
-  fill: colors.black,
+  fill: colours.black,
   content
 )

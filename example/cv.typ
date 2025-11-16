@@ -148,7 +148,7 @@
 
     ..(("Qualification", "Grade", "Date", "Institution").map(typography.table-header)),
 
-    table.hline(stroke: 0.5pt + colors.gray.lighten(60%)),
+    table.hline(stroke: 0.5pt + colours.gray.lighten(60%)),
 
     ..(for item in (
       ("Mathematics", "1st", "—", "University of Exeter"),

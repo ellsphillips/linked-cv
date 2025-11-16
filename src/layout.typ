@@ -1,4 +1,4 @@
-#import "colors.typ": colors
+#import "colours.typ": colours
 #import "typography.typ"
 
 #let layout(
@@ -28,7 +28,7 @@
   set text(
     font: "Arial",
     size: 9pt,
-    fill: colors.text,
+    fill: colours.text,
     fallback: false,
   )
 
@@ -44,7 +44,7 @@
   )
 
   show heading.where(level: 1): it => {
-    set text(size: 16pt, weight: "bold", fill: colors.text)
+    set text(size: 16pt, weight: "bold", fill: colours.text)
     it.body
   }
 
