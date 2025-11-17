@@ -28,7 +28,7 @@
   group-id: none,
   body,
 ) = {
-  let dot-radius = 2.5pt
+  let dot-radius = 3pt
   let dot-offset = 3.66mm
   let border-width = .5pt
   let border-color = colours.lightgray
