@@ -25,28 +25,33 @@
     footer-descent: 0.5cm,
   )
 
-  set text(
-    font: "Arial",
-    size: 9pt,
-    fill: colours.text,
-    fallback: false,
-  )
+  context {
+    let body-font = typography.get-body-font()
+    let headings-font = typography.get-headings-font()
 
-  set par(
-    justify: false,
-    leading: 0.65em,
-  )
+    set text(
+      font: body-font,
+      size: 9pt,
+      fill: colours.text,
+      fallback: false,
+    )
 
-  set list(
-    indent: 0em,
-    body-indent: 1em,
-    marker: place(dy: 0.25em, text(size: 0.33em, "■")),
-  )
+    set par(
+      justify: false,
+      leading: 0.65em,
+    )
 
-  show heading.where(level: 1): it => {
-    set text(size: 16pt, weight: "bold", fill: colours.text)
-    it.body
+    set list(
+      indent: 0em,
+      body-indent: 1em,
+      marker: place(dy: 0.25em, text(size: 0.33em, "■")),
+    )
+
+    show heading.where(level: 1): it => {
+      set text(size: 16pt, weight: "bold", font: headings-font, fill: colours.text)
+      it.body
+    }
+
+    doc
   }
-
-  doc
 }

@@ -11,6 +11,10 @@
     linkedin: "your-linkedin-username",
   ),
   accent-colour: colours.accent,
+  fonts: (
+    headings: "Roboto",
+    body: "Source Sans Pro",
+  ),
 )
 
 #set text(size: 8pt, hyphenate: false)
@@ -159,7 +163,7 @@
         ("Machine Learning", "—", "09-2023", "Microsoft Azure"),
         ("Artificial Intelligence", "1st", "02-2025", "OpenAI"),
       ) {
-        components.qualification(..item, accent-color: accent)
+        components.qualification(..item)
       })
     )
   ]

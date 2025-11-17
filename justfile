@@ -5,7 +5,7 @@ name := "your-name"
 cv:
     @echo "🔄 Watching Typst files for changes..."
     mkdir -p build
-    typst watch --font-path fonts example/cv.typ build/{{name}}-cv.pdf --root .
+    typst watch example/cv.typ build/{{name}}-cv.pdf --root .
 
 build:
     typst compile --font-path fonts example/cv.typ build/{{name}}-cv.pdf --root .

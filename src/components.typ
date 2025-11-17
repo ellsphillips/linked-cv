@@ -252,12 +252,8 @@
   )
 }
 
-#let qualification(name, grade, date, institution, accent-color: none) = {
-  let accent = if accent-color != none {
-    accent-color
-  } else {
-    context get-accent-colour()
-  }
+#let qualification(name, grade, date, institution) = {
+  let accent = get-accent-colour()
   (
     text(size: 8pt, fill: colours.graytext, name),
     text(size: 8pt, style: "italic", fill: colours.graytext, grade),
