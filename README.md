@@ -18,13 +18,13 @@ A beautiful, modern CV template for Typst that emulates the LinkedIn UI aestheti
 Import the package using the Typst package manager:
 
 ```typ
-#import "@preview/linked-cv:0.0.1": *
+#import "@preview/linked-cv:0.1.0": *
 ```
 
 ## Quick Start
 
 ```typ
-#import "@preview/linked-cv:0.0.1": *
+#import "@preview/linked-cv:0.1.0": *
 
 #show: linked-cv.with(
   firstname: "Your",
