@@ -94,18 +94,28 @@
 // Render multiple tech icons horizontally
 //
 // Parameters:
-//   icons: Array of icon names (can use aliases)
+//   icons: Array of icon names (can use aliases) or custom content (images, etc.)
 //   size: Height of each icon (default: 0.66em)
 //   spacing: Space between icons (default: 2pt)
 //
 // Example:
 //   #tech-icons(("python", "typescript", "react"))
 //   #tech-icons(("gcp", "docker", "k8s"), size: 0.8em)
+//   #tech-icons(("python", image("custom-logo.svg"), "react"))
 //
 #let tech-icons(icons, size: 0.66em, spacing: 2pt) = {
   box({
-    for (i, icon-name) in icons.enumerate() {
-      tech-icon(icon-name, size: size)
+    for (i, icon-item) in icons.enumerate() {
+      // If it's a string, treat it as an icon name
+      if type(icon-item) == str {
+        tech-icon(icon-item, size: size)
+      } else {
+        // Otherwise, render custom content (e.g., image) with consistent sizing
+        box(
+          height: size,
+          baseline: 20%,
+        )[#icon-item]
+      }
       if i < icons.len() - 1 {
         h(spacing)
       }
