@@ -1,0 +1,20 @@
+name: Version Consistency Check
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  check-versions:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Run version consistency check (Bash)
+      run: |
+        chmod +x scripts/check_version.sh
+        ./scripts/check_version.sh
