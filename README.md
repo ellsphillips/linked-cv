@@ -49,6 +49,7 @@ Import the package using the Typst package manager:
 #components.section("Experience")
 
 #components.employer-info(
+  image("path/to/logo.svg"),
   name: "Company Name",
   duration: ("01-2023", "current"),
 )
@@ -109,6 +110,7 @@ Display company information with optional logo, followed by timeline entries for
   name: "Company Name",
   duration: ("01-2020", "current"),
 )
+```
 
 ### Timeline Frames
 
@@ -188,12 +190,9 @@ Choose from predefined accent colours or create your own:
 
 ```typ
 #show: linked-cv.with(
-  // linked-cv provided
   accent-colour: colours.accent,
-  // typst defaults
-  accent-colour: blue,
-  // custom colour
-  accent-colour: rgb("#1a73e8").lighten(20%),
+  // accent-colour: blue,
+  // accent-colour: rgb("#1a73e8").lighten(20%),
 )
 ```
 
